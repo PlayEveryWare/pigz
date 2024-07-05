@@ -1,5 +1,6 @@
 workspace "pigz"
     language "C"
+    cdialect "C11"
     symbols "On"
     debugformat "c7"
     characterset "Unicode"
@@ -47,14 +48,22 @@ workspace "pigz"
         disablewarnings {
             "4100",
             "4127",
+            "4232",
             "4244",
             "4267",
             "4305",
-            "4457",
-            "4477",
             "4313",
+            "4456",
+            "4457",
+            "4459",
             "4473",
+            "4477",
+            "4701",
             "4996",
+        }
+
+        includedirs {
+            "external/windows_posix/",
         }
 
     includedirs {
@@ -77,6 +86,13 @@ project "libz"
         "external/zlib/trees.c",
         "external/zlib/uncompr.c",
         "external/zlib/zutil.c",
+    }
+
+project "windows_posix"
+    kind "StaticLib"
+
+    files {
+        "external/windows_posix/**",
     }
 
 project "core"
