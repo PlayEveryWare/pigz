@@ -1,6 +1,7 @@
 *.o
 /pigz
 /unpigz
+/VS2022/
 /pigzj
 /pigzt
 /pigzn
